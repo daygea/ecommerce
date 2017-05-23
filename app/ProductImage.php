@@ -5,13 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class ProductPhoto extends Model {
+class ProductImage extends Model {
 
     /**
      * @var string
      * The associated table.
      */
-    protected $table = "product_images";
+    // protected $table = "product_images";
 
     /**
      * @var array

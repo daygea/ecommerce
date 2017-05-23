@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model {
 
-    protected $table = 'products';
+    // protected $table = 'products';
 
     protected $fillable = [
         'product_name',
@@ -66,7 +66,7 @@ class Product extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function photos() {
-        return $this->hasMany('App\ProductPhoto');
+        return $this->hasMany('App\ProductImage');
     }
 
 
@@ -76,7 +76,7 @@ class Product extends Model {
      * @return mixed
      */
     public function featuredPhoto() {
-        return $this->hasOne('App\ProductPhoto')->whereFeatured(true);
+        return $this->hasOne('App\ProductImage')->whereFeatured(true);
     }
 
 

@@ -47,7 +47,7 @@
                         <h5 class="text-center red-text">Sold Out</h5>
                         <p class="text-center"><b>Available: {{ $product->product_qty }}</b></p>
                     @else
-                        <form action="/store/cart/add" method="post" name="add_to_cart">
+                        <form action="/cart/add" method="post" name="add_to_cart">
                             {!! csrf_field() !!}
                             <input type="hidden" name="product" value="{{$product->id}}" />
                             <label>QTY</label>

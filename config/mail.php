@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST',  'smtp.live.com'),
+    'host' => env('MAIL_HOST',  'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'davidisback4good@hotmail.com', 'name' => 'David'],
+    'from' => ['address' => 'daygeacardury@gmail.com', 'name' => 'Luxento Global'],
 
     /*
     |--------------------------------------------------------------------------

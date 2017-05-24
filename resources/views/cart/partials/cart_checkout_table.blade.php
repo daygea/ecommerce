@@ -22,11 +22,11 @@
             </div>
             <div class="col-sm-4 col-md-2" id="Carts-Sub-Containers">
                 @if($cart_item->products->reduced_price == 0)
-                    <div class="center-on-small-only">PRODUCT PRICE</div> <div class="light-300 black-text medium-500 center-on-small-only" id="Product_Reduced-Price-Cart">${{ $cart_item->products->price }}</div>
+                    <div class="center-on-small-only">PRODUCT PRICE</div> <div class="light-300 black-text medium-500 center-on-small-only" id="Product_Reduced-Price-Cart">N{{ number_format($cart_item->products->price) }}</div>
                     <br>
                     <p class="center-on-small-only">ISBN: {{ $cart_item->products->product_sku }}</p>
                 @else
-                    <div class="center-on-small-only">PRODUCT PRICE</div> <div class="green-text medium-500 center-on-small-only" id="Product_Reduced-Price-Cart">${{ $cart_item->products->reduced_price }}</div>
+                    <div class="center-on-small-only">PRODUCT PRICE</div> <div class="green-text medium-500 center-on-small-only" id="Product_Reduced-Price-Cart">N{{ number_format($cart_item->products->reduced_price) }}</div>
                     <br>
                     <p class="center-on-small-only">ISBN: {{ $cart_item->products->product_sku }}</p>
                 @endif
@@ -37,7 +37,7 @@
             </div>
             <div class="col-sm-3 col-md-2" id="Carts-Sub-Containers">
                 <div class="center-on-small-only">PRODUCT TOTAL</div>
-                <div class="black-text medium-500 center-on-small-only" id="Product_Reduced-Price-Cart">${{$cart_item->total}}</div>
+                <div class="black-text medium-500 center-on-small-only" id="Product_Reduced-Price-Cart">N{{ number_format($cart_item->total)}}</div>
             </div>
             <div class="col-sm-1 col-md-1 center-on-small-only" id="Carts-Sub-Containers">
                 <a href="{{URL::route('delete_book_from_cart', array($cart_item->id))}}">
@@ -52,7 +52,7 @@
             <i class="material-icons md-18">shopping_cart</i> {{ $count }}
         </div>
         <div class="col-xs-8 col-sm-4 col-md-3">
-            <b>TOTAL: ${{$cart_total}}</b>
+            <b>TOTAL: N{{ number_format($cart_total)}}</b>
         </div>
     </div>
 

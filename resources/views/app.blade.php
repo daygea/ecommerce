@@ -33,8 +33,8 @@
         
         
         <!-- Material Design Icons -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/material.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font/font-lato.css') }}">
         <!-- Font Awesome -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" >
 

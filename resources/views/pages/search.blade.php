@@ -52,7 +52,7 @@
                                 N {{  number_format($query->reduced_price) }}
                             @endif
                             <br><br><br>
-                                <form action="/store/cart/add" method="post" name="add_to_cart">
+                                <form action="cart/add" method="post" name="add_to_cart">
                                     {!! csrf_field() !!}
                                     <input type="hidden" name="product" value="{{$query->id}}" />
                                     <input type="hidden" name="qty" value="1" />

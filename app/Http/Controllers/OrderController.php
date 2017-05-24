@@ -88,11 +88,11 @@ class OrderController extends Controller {
             'first_name' => 'required|max:30|min:2',
             'last_name'  => 'required|max:30|min:2',
             'address'    => 'required|max:50|min:4',
-            'address_2'  => 'max:50|min:4',
+            'phone'  => 'max:13|min:11',
             'city'       => 'required|max:50|min:3',
             'state'      => 'required|',
-            'zip'        => 'required|max:11|min:4',
-            'full_name'  => 'required|max:30|min:2',
+            // 'zip'        => 'required|max:11|min:4',
+            // 'full_name'  => 'required|max:30|min:2',
         ]);
 
 
@@ -104,17 +104,17 @@ class OrderController extends Controller {
         }
 
         // Set your secret key: remember to change this to your live secret key in production
-        Stripe::setApiKey('YOUR STRIPE SECRET KEY');
+        // Stripe::setApiKey('YOUR STRIPE SECRET KEY');
 
         // Set Inputs to the the form fields so we can store them in DB
         $first_name = Input::get('first_name');
         $last_name = Input::get('last_name');
         $address = Input::get('address');
-        $address_2 = Input::get('address_2');
+        $phone = Input::get('phone');
         $city = Input::get('city');
         $state = Input::get('state');
-        $zip = Input::get('zip');
-        $full_name = Input::get('full_name');
+        // $zip = Input::get('zip');
+        // $full_name = Input::get('full_name');
 
         // Set $user_id to the currently authenticated user
         $user_id = Auth::user()->id;
@@ -133,17 +133,17 @@ class OrderController extends Controller {
 
         
         // Create the charge on Stripe's servers - this will charge the user's card
-        try {
-            $charge = \Stripe\Charge::create(array(
-                'source' => $request->input('stripeToken'),
-                'amount' => $charge_amount, // amount in cents, again
-                'currency' => 'usd',
-            ));
+        // try {
+        //     $charge = \Stripe\Charge::create(array(
+        //         'source' => $request->input('stripeToken'),
+        //         'amount' => $charge_amount, // amount in cents, again
+        //         'currency' => 'usd',
+        //     ));
 
-        } catch(\Stripe\Error\Card $e) {
-            // The card has been declined
-            echo $e;
-        }
+        // } catch(\Stripe\Error\Card $e) {
+        //     // The card has been declined
+        //     echo $e;
+        // }
 
 
         // Create the order in DB, and assign each variable to the correct form fields
@@ -153,12 +153,12 @@ class OrderController extends Controller {
                 'first_name' => $first_name,
                 'last_name'  => $last_name,
                 'address'    => $address,
-                'address_2'  => $address_2,
+                'phone'  => $phone,
                 'city'       => $city,
                 'state'      => $state,
-                'zip'        => $zip,
+                // 'zip'        => $zip,
                 'total'      => $cart_total,
-                'full_name'  => $full_name,
+                // 'full_name'  => $full_name,
             ));
 
         // Attach all cart items to the pivot table with their fields

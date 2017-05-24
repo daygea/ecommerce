@@ -170,20 +170,36 @@ class OrderController extends Controller {
                 'total'  => $order_products->products->price * $order_products->qty,
                 'total_reduced'  => $order_products->products->reduced_price * $order_products->qty,
             ));
+
+            $productInfo = \DB::table('products')->where('id','=',$order_products->product_id)->first();
+            $productQty = $productInfo->product_qty;
+            $remainder = ($productQty - $order_products->qty);
+
+            // Decrement the product quantity in the products table by how many a user bought of a certain product.
+            if($remainder < 0){                
+
+                flash()->error('danger', 'We are out of stock with the quantity you specified.');
+
+                return redirect()->route('cart');
+            }
+
+            \DB::table('products')->where('id','=',$order_products->product_id)->update(['product_qty' => $remainder]);
         }
+        
 
+            // \DB::table('products')->decrement('product_qty', $order_products->qty);
+            // \DB::table('products')->where('id','=',$order_products->product_id)->update(['product_qty' => $remainder]);
 
-        // Decrement the product quantity in the products table by how many a user bought of a certain product.
-        \DB::table('products')->decrement('product_qty', $order_products->qty);
+            // Delete all the items in the cart after transaction successful
+            Cart::where('user_id', '=', $user_id)->delete();
+            
+            // Then return redirect back with success message
+            flash()->success('Success', 'Your order was processed successfully.');
+
+            return redirect()->route('cart');    
 
         
-        // Delete all the items in the cart after transaction successful
-        Cart::where('user_id', '=', $user_id)->delete();
         
-        // Then return redirect back with success message
-        flash()->success('Success', 'Your order was processed successfully.');
-
-        return redirect()->route('cart');
 
     }
     

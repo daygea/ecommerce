@@ -150,7 +150,7 @@
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document, s = d.createElement('script');
 
-            s.src = '//httpdavidtrushkovcomstore.disqus.com/embed.js';
+             s.src = 'https://luxento.disqus.com/embed.js';
 
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);

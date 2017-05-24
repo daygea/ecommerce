@@ -15,14 +15,14 @@
             <div class="col-md-12">
 
                 <div class="col-xs-12 col-sm-12 col-md-8 gallery">
-                    @if ($product->photos->count() === 0)
+                    @if ($product->photos->count() == 0)
                         <p>No Images found for this Product.</p><br>
                         <img src="images/no-image-found.jpg" alt="No Image Found Tag" id="Product-similar-Image">
                     @else
-                        @foreach ($product->photos->slice(0, 8) as $photo)
+                        @foreach ($product->photos->slice(0, 8) as $photo)                        
                             <div class="col-xs-6 col-sm-4 col-md-3 gallery_image text-center">
-                                <a href="{{ $photo->path }}" data-lity>
-                                    <img src="{{ $photo->thumbnail_path }}" alt="Photo ID: {{ $photo->id  }}" data-id="{{ $photo->id }}" class="img-thumbnail">
+                                <a href="{{ asset(''.$photo->path) }}" data-lity>
+                                    <img src="{{ asset(''.$photo->thumbnail_path) }}" alt="Photo ID: {{ $photo->id  }}" data-id="{{ $photo->id }}" class="img-thumbnail">
                                 </a>
                             </div>
                         @endforeach
@@ -35,11 +35,11 @@
                     <p id="Product_ISBN">ISBN: {{ $product->product_sku }}</p>
                     <br>
                     @if($product->reduced_price == 0)
-                        <div class="light-300 black-text medium-500" id="Product_Reduced-Price">$ {{  $product->price }}</div>
+                        <div class="light-300 black-text medium-500" id="Product_Reduced-Price">N {{ number_format( $product->price) }}</div>
                         <br>
                     @else
-                        <div class="discount light-300 black-text medium-500" id="Product_Reduced-Price"><s>$ {{ $product->price }}</s></div>
-                        <div class="green-text medium-500" id="Product_Reduced-Price">$ {{ $product->reduced_price }}</div>
+                        <div class="discount light-300 black-text medium-500" id="Product_Reduced-Price"><s>N {{ number_format($product->price) }}</s></div>
+                        <div class="green-text medium-500" id="Product_Reduced-Price">N {{ number_format($product->reduced_price) }}</div>
                     @endif
                     <hr>
 
@@ -105,10 +105,10 @@
                                 @else
                                     @if ($similar->featuredPhoto)
                                         <p id="Similar-Title">{{ str_limit($similar->product_name, $limit = 28, $end = '...') }}</p>
-                                        <img src="{{ $similar->featuredPhoto->thumbnail_path }}" alt="Photo ID: {{ $similar->featuredPhoto->id }}" id="Product-similar-Image" />
+                                        <img src="{{ asset(''.$similar->featuredPhoto->thumbnail_path) }}" alt="Photo ID: {{ $similar->featuredPhoto->id }}" id="Product-similar-Image" />
                                     @elseif(!$similar->featuredPhoto)
                                         <p id="Similar-Title">{{ $similar->product_name }}</p>
-                                        <img src="{{ $similar->photos->first()->thumbnail_path}}" alt="Photo" id="Product-similar-Image" />
+                                        <img src="{{ asset(''.$similar->photos->first()->thumbnail_path) }}" alt="Photo" id="Product-similar-Image" />
                                     @else
                                         N/A
                                     @endif

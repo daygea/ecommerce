@@ -17,9 +17,9 @@
                                 <img src="images/no-image-found.jpg" alt="No Image Found Tag" id="Product-similar-Image" style="width: 200px; height: 200px;">
                             @else
                                 @if ($product->featuredPhoto)
-                                    <img src="{{ $product->featuredPhoto->thumbnail_path }}" alt="Photo ID: {{ $product->featuredPhoto->id }}" />
+                                    <img src="{{ asset(''.$product->featuredPhoto->thumbnail_path) }}" alt="Photo ID: {{ $product->featuredPhoto->id }}" />
                                 @elseif(!$product->featuredPhoto)
-                                    <img src="{{ $product->photos->first()->thumbnail_path}}" alt="Photo" />
+                                    <img src="{{ asset(''.$product->photos->first()->thumbnail_path)}}" alt="Photo" />
                                 @else
                                     N/A
                                 @endif
@@ -28,9 +28,9 @@
                                     <h6 class="center-on-small-only" id="featured-product-name"><br>{{ $product->product_name }}</h6>
                                 </div>
                                 @if($product->reduced_price == 0)
-                                    <div class="light-300 black-text medium-500" id="Product_Reduced-Price">$ {{  $product->price }}</div>
+                                    <div class="light-300 black-text medium-500" id="Product_Reduced-Price">N {{  number_format($product->price) }}</div>
                                 @else
-                                    <div class="green-text medium-500" id="Product_Reduced-Price">$ {{ $product->reduced_price }}</div>
+                                    <div class="green-text medium-500" id="Product_Reduced-Price">N {{ number_format($product->reduced_price) }}</div>
                                 @endif
                         </a>
                         <form action="/store/cart/add" method="post" name="add_to_cart">

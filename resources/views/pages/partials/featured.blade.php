@@ -20,7 +20,7 @@
                         @else
                             @if ($product->featuredPhoto)
                                 
-                                <img src="{{ $product->featuredPhoto->thumbnail_path }}" alt="Photo ID: {{ $product->featuredPhoto->id }}" />
+                                <img src="{{ asset(''.$product->featuredPhoto->thumbnail_path) }}" alt="Photo ID: {{ $product->featuredPhoto->id }}" />
                                 
                             @elseif(!$product->featuredPhoto)
                                 <img src="{{ asset(''.$product->photos->first()->thumbnail_path) }}" alt="Photo" />
@@ -32,9 +32,9 @@
                                 <h6 class="center-on-small-only" id="featured-product-name"><br>{{ $product->product_name }}</h6>
                             </div>
                             @if($product->reduced_price == 0)
-                                <div class="light-300 black-text medium-500" id="Product_Reduced-Price">$ {{  $product->price }}</div>
+                                <div class="light-300 black-text medium-500" id="Product_Reduced-Price">N {{  number_format($product->price) }}</div>
                             @else
-                                <div class="green-text medium-500" id="Product_Reduced-Price">$ {{ $product->reduced_price }}</div>
+                                <div class="green-text medium-500" id="Product_Reduced-Price">N {{ number_format($product->reduced_price) }}</div>
                             @endif
                         </a>
                         <form action="cart/add" method="post" name="add_to_cart">

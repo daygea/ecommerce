@@ -27,9 +27,9 @@
                                     <img src="images/no-image-found.jpg" alt="No Image Found Tag">
                             @else
                                 @if ($query->featuredPhoto)
-                                    <img src="{{ $query->featuredPhoto->thumbnail_path }}" alt="Photo ID: {{ $query->featuredPhoto->id }}" />
+                                    <img src="{{ asset(''.$query->featuredPhoto->thumbnail_path) }}" alt="Photo ID: {{ $query->featuredPhoto->id }}" />
                                 @elseif(!$query->featuredPhoto)
-                                    <img src="{{ $query->photos->first()->thumbnail_path}}" alt="Photo" />
+                                    <img src="{{ asset(''.$query->photos->first()->thumbnail_path) }}" alt="Photo" />
                                 @else
                                     N/A
                                 @endif
@@ -45,11 +45,11 @@
                         </div>
                         <div class="col-md-3 text-center">
                             @if($query->reduced_price == 0)
-                                $ {{  $query->price }}
+                                N {{  number_format($query->price) }}
                                 <br>
                             @else
-                                <div class="text-danger list-price"><s>$ {{ $query->price }}</s></div>
-                                $ {{ $query->reduced_price }}
+                                <div class="text-danger list-price"><s>N {{  number_format($query->price) }}</s></div>
+                                N {{  number_format($query->reduced_price) }}
                             @endif
                             <br><br><br>
                                 <form action="/store/cart/add" method="post" name="add_to_cart">

@@ -12,7 +12,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            <div class="col-md-10 col-md-offset-1 text-center"><a href="http://davidtrushkov.com/" target="_blank">© 2016 Copyright David Trushkov</a></div>
+            <div class="col-md-10 col-md-offset-1 text-center"><a href="http://luxentoglobal.com/" target="_blank">© 2016 Copyright Luxento Global</a></div>
         </div>
     </div>
 </footer>

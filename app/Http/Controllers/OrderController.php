@@ -88,7 +88,7 @@ class OrderController extends Controller {
             'first_name' => 'required|max:30|min:2',
             'last_name'  => 'required|max:30|min:2',
             'address'    => 'required|max:50|min:4',
-            'phone'  => 'max:13|min:11',
+            'phone'  => 'max:14|min:11',
             'city'       => 'required|max:50|min:3',
             'state'      => 'required|',
             // 'zip'        => 'required|max:11|min:4',
@@ -175,10 +175,11 @@ class OrderController extends Controller {
             $productQty = $productInfo->product_qty;
             $remainder = ($productQty - $order_products->qty);
 
+            
             // Decrement the product quantity in the products table by how many a user bought of a certain product.
             if($remainder < 0){                
 
-                flash()->error('danger', 'We are out of stock with the quantity you specified.');
+                flash()->error('danger', 'We are out of stock with the product '.$productInfo->product_name .' you specified.');
 
                 return redirect()->route('cart');
             }

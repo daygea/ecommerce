@@ -15,7 +15,7 @@
     <!-- Featured Products section -->
     @include('pages.partials.featured')
 
-    <section class="parallax" id="section2">
+    <section class="parallax" id="section2" style="background: url('images/slider/Brands.jpg');">
         <div class="carousel-caption hidden-xs" id="brand-caption">
             <div class="animated fadeInDown">
                 <h3><strong><span class="color">Shop By Brands</span></strong></h3>

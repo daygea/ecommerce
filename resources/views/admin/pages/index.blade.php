@@ -57,7 +57,7 @@
                             <div class="panel-body">
                                 <div style="overflow: auto; height: 275px;">
                                     <div class="col-xs-6 col-md-6 text-center" id="Admin_Dashboard_Total-Content-R">
-                                        <p><b> Total Revenue<br> ${{ $count_total }}</b></p>
+                                        <p><b> Total Revenue<br> ₦{{ $count_total }}</b></p>
                                     </div>
                                     <div class="col-xs-6 col-md-6 text-center" id="Admin_Dashboard_Total-Content-O">
                                         <p><b>  Total Orders<br>  {{ $orders->count() }}</b></p>

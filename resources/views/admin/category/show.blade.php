@@ -8,26 +8,34 @@
         <a href="{{ url('admin/categories/add') }}" class="btn btn-primary">Add new Category</a>
             <br><br>
 
-        <div class="col-md-10" id="admin-category-container">
+        <div class="col-md-12" id="admin-category-container">
         <ul class="collection with-header">
             @foreach ($categories as $category)
-            <li class="collection-item blue">
-                <h5 class="white-text">
-                    {{ $category->category }}
-                </h5>
-                <li class="collection-item primary-color">
-                    <div class="col-xs-3 col-sm-2 col-md-2">
-                        <form method="post" action="{{ route('admin.category.delete', $category->id) }}" class="delete_form">
-                            {{ csrf_field() }}
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button class="delete-btn">
-                                <i class="material-icons delete-white">delete_forever</i>
-                            </button>
-                        </form>
-                    </div>
+            <li class="collection-item black">
+            <div class="row">                
+            
+                <div class="col-md-4">
+                    <h5 class="white-text pull-left">
+                        {{ $category->category }}
+                    </h5>
+                </div>
+                
+                <div class="col-md-3 col-md-offset-4">  
                     <a href="{{ route('admin.category.edit', $category->id) }}">
-                        <i class="material-icons edit-white">mode_edit</i>
+                        <i class="material-icons edit-white pull-left">mode_edit</i>
                     </a>
+                    <form method="post" action="{{ route('admin.category.delete', $category->id) }}" class="delete_form ">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button class="delete-btn pull-right">
+                            <i class="material-icons delete">delete_forever</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+                    
+                <li class="collection-item primary-color">
+                    
                     <a href="{{ route('admin.category.addsub', $category->id) }}" id="sub-category">+ Sub-Category</a>
                 </li>
             </li>

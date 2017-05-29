@@ -45,7 +45,7 @@
                     <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                         <label>Price</label>
                         <div class="input-group">
-                            <div class="input-group-addon"><i class="material-icons">attach_money</i></div>
+                            <div class="input-group-addon"><i class="material-icons">₦</i></div>
                             <input type="text" class="form-control" name="price" value="{{ Request::old('price') ? : $product->price }}" placeholder="Edit Product Price">
                         </div>
                         @if($errors->has('price'))
@@ -59,7 +59,7 @@
                     <div class="form-group{{ $errors->has('reduced_price') ? ' has-error' : '' }}">
                         <label>Reduced Price</label>
                         <div class="input-group">
-                            <div class="input-group-addon"><i class="material-icons">attach_money</i></div>
+                            <div class="input-group-addon"><i class="material-icons">₦</i></div>
                             <input type="text" class="form-control" name="reduced_price" value="{{ Request::old('reduced_price') ? : $product->reduced_price }}" placeholder="Edit Product Reduced Price">
                         </div>
                         @if($errors->has('reduced_price'))

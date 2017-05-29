@@ -34,16 +34,16 @@
                                         <td>{{$orderitem->pivot->qty}}</td>
                                         <td>
                                             @if($orderitem->pivot->reduced_price == 0)
-                                                ${{ $orderitem->pivot->price }}
+                                                ₦{{ $orderitem->pivot->price }}
                                             @else
                                                 ${{ $orderitem->pivot->reduced_price }}
                                             @endif
                                         </td>
                                         <td>
                                             @if ($orderitem->pivot->total_reduced == 0)
-                                                ${{$orderitem->pivot->total}}
+                                                ₦{{$orderitem->pivot->total}}
                                             @else
-                                                ${{$orderitem->pivot->total_reduced}}
+                                                ₦{{$orderitem->pivot->total_reduced}}
                                             @endif
                                         </td>
                                     </tr>
@@ -58,7 +58,7 @@
                                     <td><b>Shipping Address</b></td>
                                     <td>{{$order->address}}<br>{{$order->city}}, {{$order->state}}</td>
                                     <td><b>Total</b></td>
-                                    <td><b>${{$order->total}}</b></td>
+                                    <td><b>₦{{$order->total}}</b></td>
                                 </tr>
                                 </tbody>
                             </table>

@@ -9,7 +9,7 @@ class Cart extends Model {
     /**
      * @var string
      */
-    protected $table = 'carts';
+    // protected $table = 'carts';
 
 
     /**

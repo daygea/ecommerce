@@ -10,28 +10,30 @@
 
     <title>Store Dashboard</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <!-- Bootstrap core mdb.css -->
-    <link rel="stylesheet" href="{{ asset('css/mdb.css') }}">
-    <!-- Include admin.less file -->
-    <link rel="stylesheet" href="{{ asset('less/admin.less') }}">
-    <link rel="stylesheet" href="{{ asset('less/app.less') }}">
-    <!-- Include app.scss file -->
-    <link rel="stylesheet" href="{{ asset('sass/app.scss') }}">
-    <!-- Include sweet alert file -->
-    <link rel="stylesheet" href="{{ asset('css/sweetalert.css') }}">
-    <!-- Include lity light-tbox file -->
-    <link rel="stylesheet" href="{{ asset('css/lity.css') }}">
-    <!-- Include drop-zone file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.css">
-    <!-- Include Froala Editor style. -->
-    <link href="{{ asset('css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- Material Design Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <!-- Font Awesome -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" >
+   <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <!-- Bootstrap core mdb.css -->
+        <link rel="stylesheet" href="{{ asset('css/mdb.css') }}">
+        <!-- Include app.less file -->
+        <link rel="stylesheet" href="{{ asset('less/app.less') }}">
+        <!-- Include app.scss file -->
+        <link rel="stylesheet" href="{{ asset('sass/app.scss') }}">
+        <!-- Include sweet alert file -->
+        <link rel="stylesheet" href="{{ asset('css/sweetalert.css') }}">
+        <!-- Include typeahead file -->
+        <link rel="stylesheet" href="{{ asset('css/typeahead.css') }}">
+        <!-- Include lity ligh-tbox file -->
+        <link rel="stylesheet" href="{{ asset('css/lity.css') }}">
+        
+        <!-- Added the main.css file that combines app.scss and app.css togather -->
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        
+        
+        <!-- Material Design Icons -->
+        <link rel="stylesheet" href="{{ asset('css/material.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font/font-lato.css') }}">
+        <!-- Font Awesome -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" >
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

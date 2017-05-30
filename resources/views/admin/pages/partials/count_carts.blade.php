@@ -1,7 +1,7 @@
 
 @if ($carts->count() == 0)
     <p>No active Carts found</p>
-@else
+@else    
     <table class="table table-bordered table-responsive table-condensed">
         <thead>
         <tr>
@@ -14,6 +14,7 @@
         </tr>
         </thead>
         <tbody>
+        
             @foreach($carts as $cart)
             <tr>
                 <td class="text-center">

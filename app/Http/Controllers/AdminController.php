@@ -48,6 +48,9 @@ class AdminController extends Controller {
         // Select all from Products where the Product Quantity = 0
         $product_quantity = Product::where('product_qty', '=', 0)->get();
 
+        // dd($carts);
+        // die();
+
         return view('admin.pages.index', compact('cart_count', 'orders', 'users', 'carts', 'count_total', 'products', 'product_quantity'));
     }
     

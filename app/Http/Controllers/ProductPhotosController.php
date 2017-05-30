@@ -18,18 +18,19 @@ class ProductPhotosController extends Controller {
      * @param ProductPhotoRequest $request
      */
     public function store($id, ProductPhotoRequest $request) {
-        echo "Hello world";
-        die();
+        
         // Set $product = Product::LocatedAt() in (Product.php Model) = to the id
         // -- Find the product.
-        $product = Product::LocatedAt($id);
+        $product = Product::LocatedAt($id);        
 
         // Store the photo from the file instance
         // -- ('photo') is coming from "public/js/dropzone.forms.js" --
         $photo = $request->file('photo');
 
+
         // Create dedicated class to add photos to product, and save the photos.
         (new AddPhotoToProduct($product, $photo))->save();
+        
     }
 
 

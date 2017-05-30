@@ -161,6 +161,9 @@ class OrderController extends Controller {
                 // 'full_name'  => $full_name,
             ));
 
+        dd($cart_products);
+        die();
+
         // Attach all cart items to the pivot table with their fields
         foreach ($cart_products as $order_products) {
             $order->orderItems()->attach($order_products->product_id, array(
@@ -188,12 +191,19 @@ class OrderController extends Controller {
         }
         
 
-            // \DB::table('products')->decrement('product_qty', $order_products->qty);
-            // \DB::table('products')->where('id','=',$order_products->product_id)->update(['product_qty' => $remainder]);
-
             // Delete all the items in the cart after transaction successful
             Cart::where('user_id', '=', $user_id)->delete();
+
+            $client_details = [$first_name, $last_name, $address, $phone, $city, $state]; 
             
+            $admin_email = "kadri_adedeji@yahoo.com";
+            $admin = array('admin_email'=>$admin_email,'client_email'=>Auth::user()->email);
+
+            \Mail::send('emails.order',array('client_details'=>$client_details, 'cart_products'=>$cart_products), function($message) use ($admin)
+            {
+              $message->to($admin['admin_email'], 'Admin')->subject('New Order Details.');        
+            });
+                        
             // Then return redirect back with success message
             flash()->success('Success', 'Your order was processed successfully.');
 

@@ -54,12 +54,7 @@
                         </form>
                     </div>
                 </div>
-                <p id="No-Account" class="center-block text-center">Don't have an account? <a href="{{ url('/register') }}" id="Sign-up">Register</a></p>
-                <div class="panel panel-default" id="Login-Register-Panel" style="padding: 20px">
-                    <h6 class="text-center">Login as Test Admin User</h6>
-                    <h6 class="text-center">Email: test@hotmail.com</h6>
-                    <h6 class="text-center">Password: test123</h6>
-                </div>
+                <p id="No-Account" class="center-block text-center">Don't have an account? <a href="{{ url('/register') }}" id="Sign-up">Register</a></p>                
             </div>
         </div>
     </div>

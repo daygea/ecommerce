@@ -33,7 +33,7 @@ class ProductImage extends Model {
      * Get the product photos base directory.
      */
     public function baseDir() {
-        return 'public/ProductPhotos/photos';
+        return 'ProductPhotos/photos';
     }
 
 

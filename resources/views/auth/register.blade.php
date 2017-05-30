@@ -64,8 +64,7 @@
                         </form>
                     </div>
                 </div>
-                <p id="No-Account" class="center-block text-center">Already have an account? <a href="{{ url('/login') }}" id="Sign-up">Login</a></p>
-                <p id="No-Account" class="center-block text-center">Login as Test Admin User <a href="{{ url('/login') }}" id="Sign-up">Login</a></p>
+                <p id="No-Account" class="center-block text-center">Already have an account? <a href="{{ url('/login') }}" id="Sign-up">Login</a></p>                
             </div>
         </div>
     </div>

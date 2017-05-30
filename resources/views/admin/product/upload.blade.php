@@ -114,6 +114,7 @@
 @section('footer')
 
     <script type="application/javascript" src="{{ asset('js/libs/dropzone.js') }}"></script>
+    
 
     <script>
 

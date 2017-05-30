@@ -65,7 +65,7 @@ class AppMailers {
     public function deliver() {
         $this->mailer->send($this->view, $this->data, function($message) {
             $message->from($this->from, 'Administrator')
-                ->to($this->to);
+                ->to($this->to)->subject("Email confirmation");
         });
     }
 

@@ -16,6 +16,7 @@
         <tbody>
         
             @foreach($carts as $cart)
+
             <tr>
                 <td class="text-center">
                     <form method="post" action="{{ route('admin.cart.delete', $cart->id) }}">
@@ -26,7 +27,7 @@
                         </button>
                     </form>
                 </td>
-                <td>#{{ $cart->id }}</td>
+                <td>#{{ $cart->id }}</td>                
                 <td>{{ $cart->user->username }}</td>
                 <td>{{ $cart->products->product_name }}</td>
                 <td>{{ $cart->qty }}</td>

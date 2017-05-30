@@ -30,7 +30,7 @@ class AdminController extends Controller {
         $cart_count = $this->countProductsInCart();
         
         // Get all the orders in DB
-        $orders = Order::all();
+        $orders = Order::orderBy('updated_at','DESC')->get();
 
         // Get the grand total of all totals in orders table
         $count_total = Order::sum('total');

@@ -51,9 +51,9 @@
                         No Images
                     @else
                         @if ($products->featuredPhoto)
-                            <img src="/store/{{ $products->featuredPhoto->thumbnail_path }}" alt="Photo ID: {{ $products->featuredPhoto->id }}" />
+                            <img src="{{ asset(''.$products->featuredPhoto->thumbnail_path) }}" alt="Photo ID: {{ $products->featuredPhoto->id }}" />
                         @elseif(!$products->featuredPhoto)
-                            <img src="/store/{{ $products->photos->first()->thumbnail_path}}" alt="Photo" />
+                            <img src="{{ asset(''.$products->photos->first()->thumbnail_path) }}" alt="Photo" />
                         @else
                             N/A
                         @endif
@@ -62,10 +62,10 @@
                 <td class="text-center">{{ $products->product_name }}</td>
                 <td class="text-center" id="td-display-mobile">
                     @if($products->reduced_price == 0)
-                        $ {{ $products->price }}
+                        ₦ {{ $products->price }}
                     @else
-                        <div class="text-danger list-price"><s>$ {{ $products->price }}</s></div>
-                        $ {{ $products->reduced_price }}
+                        <div class="text-danger list-price"><s>₦ {{ $products->price }}</s></div>
+                        ₦ {{ $products->reduced_price }}
                     @endif
                 </td>
                 <td class="text-center" id="td-display-mobile">

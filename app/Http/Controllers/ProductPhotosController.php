@@ -18,6 +18,8 @@ class ProductPhotosController extends Controller {
      * @param ProductPhotoRequest $request
      */
     public function store($id, ProductPhotoRequest $request) {
+        echo "Hello world";
+        die();
         // Set $product = Product::LocatedAt() in (Product.php Model) = to the id
         // -- Find the product.
         $product = Product::LocatedAt($id);

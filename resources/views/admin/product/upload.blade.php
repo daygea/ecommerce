@@ -25,7 +25,7 @@
                 @if ($products->photos->count() > 7)
                     <p class="text-center"><b>Cannot upload more than 8 photos for one for One Product. Delete some photos to upload other photos.</b></p><br><br>
                 @else
-                    <form method="POST" action="admin/products/{{ $products->id }}/photo" class="dropzone" id="addProductImages" enctype="multipart/form-data">
+                    <form method="POST" action="/admin/products/{{ $products->id }}/photo" class="dropzone" id="addProductImages" enctype="multipart/form-data">
                         {{ csrf_field() }}
                     </form>
                     <p class="text-center"><span class="red-text">*</span> Only 8 photos will show up per product on products page</p>
@@ -45,7 +45,7 @@
                                     </a>
                                 @else
                                     <div class="img-wrap">
-                                        <form method="post" action="admin/products/photos/{{ $photo->id }}">
+                                        <form method="post" action="/admin/products/photos/{{ $photo->id }}">
                                             {!! csrf_field() !!}
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="close">&times;</button>
@@ -82,7 +82,7 @@
             <h6>Which Image do you want featured as the main Product Image for: {{ $products->product_name }}?</h6><br>
 
 
-            <form method="post" action="admin/products/add/featured/{{ $products->id }}">
+            <form method="post" action="/admin/products/add/featured/{{ $products->id }}">
                 {!! csrf_field() !!}
                 @foreach($products->photos as $set)
                         <div class="form-group{{ $errors->has('featured') ? ' has-error' : '' }}">
@@ -113,7 +113,7 @@
 
 @section('footer')
 
-    <script type="application/javascript" src="{{ asset('src/public/js/libs/dropzone.js') }}"></script>
+    <script type="application/javascript" src="{{ asset('js/libs/dropzone.js') }}"></script>
 
     <script>
 

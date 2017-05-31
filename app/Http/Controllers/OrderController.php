@@ -161,8 +161,6 @@ class OrderController extends Controller {
                 // 'full_name'  => $full_name,
             ));
 
-        dd($cart_products);
-        die();
 
         // Attach all cart items to the pivot table with their fields
         foreach ($cart_products as $order_products) {

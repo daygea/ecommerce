@@ -7,7 +7,7 @@
 <body>
 
 
-<h1>Thanks for your patronage</h1>
+<h1>A new product order</h1>
 
 
 <h2>Client Details</h2>
@@ -19,11 +19,35 @@
 <p>State: {{$client_details[5]}}</p>
 
 <h2>Cart Products</h2>
-@foreach($cart_products as $cart_product)
+<table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Cart ID</th>
+            <th>Username</th>
+            <th>Products</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total Price</th>
+            <th>Total reduced Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+            @foreach($cart_products as $cart)
 
-	<p>$cart_product-></p>	
-
-@endforeach
+            <tr>                
+                <td>#{{ $cart->id }}</td>                
+                <td>{{ $cart->user->username }}</td>
+                <td>{{ $cart->products->product_name }}</td>
+                <td>{{ $cart->qty }}</td>
+                <td>{{ $cart->products->price }}</td>
+                <td>{{ $cart->products->reduced_price }}</td>
+                <td>{{ $cart->products->price * $cart->qty }}</td>
+                <td>{{ $cart->products->reduced_price * $cart->qty }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 </body>
 </html>

@@ -56,7 +56,7 @@ class AddPhotoToProduct {
      * @return ProductPhoto
      */
     protected function makePhoto() {
-        return new ProductPhoto(['name' => $this->makeFilename()]);
+        return new ProductImage(['name' => $this->makeFilename()]);
     }
 
 

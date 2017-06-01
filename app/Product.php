@@ -55,8 +55,8 @@ class Product extends Model {
      * @param ProductPhoto $ProductPhoto
      * @return Model
      */
-    public function addPhoto(ProductPhoto $ProductPhoto) {
-        return $this->photos()->save($ProductPhoto);
+    public function addPhoto(ProductImage $ProductImage) {
+        return $this->photos()->save($ProductImage);
     }
 
 

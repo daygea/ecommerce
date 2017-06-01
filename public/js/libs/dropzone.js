@@ -1382,6 +1382,7 @@
         };
 
         Dropzone.prototype.submitRequest = function(xhr, formData, files) {
+            console.log(formData);
             return xhr.send(formData);
         };
 

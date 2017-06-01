@@ -27,10 +27,12 @@ class ProductPhotosController extends Controller {
         // -- ('photo') is coming from "public/js/dropzone.forms.js" --
         $photo = $request->file('photo');
 
+        //return $photo;
+
 
         // Create dedicated class to add photos to product, and save the photos.
         (new AddPhotoToProduct($product, $photo))->save();
-        
+
     }
 
 

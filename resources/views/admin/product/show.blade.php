@@ -62,10 +62,10 @@
                 <td class="text-center">{{ $products->product_name }}</td>
                 <td class="text-center" id="td-display-mobile">
                     @if($products->reduced_price == 0)
-                        ₦ {{ $products->price }}
+                        ₦ {{ number_format($products->price) }}
                     @else
-                        <div class="text-danger list-price"><s>₦ {{ $products->price }}</s></div>
-                        ₦ {{ $products->reduced_price }}
+                        <div class="text-danger list-price"><s>₦ {{ number_format($products->price) }}</s></div>
+                        ₦ {{ number_format($products->reduced_price) }}
                     @endif
                 </td>
                 <td class="text-center" id="td-display-mobile">

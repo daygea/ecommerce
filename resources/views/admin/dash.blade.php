@@ -34,6 +34,7 @@
         <link rel="stylesheet" href="{{ asset('css/font/font-lato.css') }}">
         <!-- Font Awesome -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" >
+        <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=l5rknkcexjfj1zr3a6wuyrihux4ni4cilydxfqemhberdprq"></script>
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -88,7 +89,7 @@
          */
         gapi.analytics.auth.authorize({
             container: 'embed-api-auth-container',
-            clientid: 'YOUR CLIENT ID'
+            clientid: 'UA-62575660-2'
         });
         /**
          * Create a new ViewSelector instance to be rendered inside of an
@@ -127,6 +128,23 @@
         });
     });
 </script>
+ <script>
+          tinymce.init({
+          selector: 'textarea',
+          height: 500,
+          menubar: false,
+          plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table contextmenu paste code'
+          ],
+          toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+          content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tinymce.com/css/codepen.min.css']
+        });
+
+    </script>
 
 @include('partials.flash')
 

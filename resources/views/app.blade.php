@@ -88,7 +88,7 @@
              */
             gapi.analytics.auth.authorize({
                 container: 'embed-api-auth-container',
-                clientid: 'YOUR CLIENT ID'
+                clientid: 'UA-62575660-2'
             });
             /**
              * Create a new ViewSelector instance to be rendered inside of an

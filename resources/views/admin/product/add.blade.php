@@ -201,7 +201,7 @@
     <script type="text/javascript" src="{{ asset('js/plugins/quote.min.js') }}"></script>
 
 
-    <script>
+   <!--  <script>
         $(function() {
             $('#product-description').froalaEditor({
                 charCounterMax: 2500,
@@ -221,6 +221,8 @@
                 placeholderText: 'Insert Product specs...',
             })
         });
-    </script>
+    </script> -->
+
+   
 
 @endsection
